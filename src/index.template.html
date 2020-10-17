@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pixiv Illustration Collection</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Pixiv Illustration Collection">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="description" content="提供Pixiv插画排行榜的浏览与下载以及热门排序的高级会员搜索">
+  <meta name="keywords" content="pixiv.net,pixiv中国,pixiv怎么上不去,Pixiv,Pixiv每日排行,pixiv高级会员搜索,p站,二次元插画,ACG,动漫图包,pixiv安卓,pixiv站,.pixiv,pixiv图,pixiv中文"/>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="browsermode" content="application">
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="x5-page-mode" content="app" />
+  <meta name="360-fullscreen" content="true" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/public/logo-120.png">
+  <link rel="shortcut icon" sizes="48x48" href="/public/logo-48.png">
+  <meta name="theme-color" content="#f60">
+  <link rel="manifest" href="/manifest.json">
+  <script data-ad-client="ca-pub-7308895271330819" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- 导入cdn UIcss -->
+  <!-- <link href="https://cdn.bootcss.com/element-ui/2.13.0/theme-chalk/index.css" rel="stylesheet"> -->
+  <style type="text/css">
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: middle;
+       fill: currentColor;
+       overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <script src="https://cdn.bootcss.com/vue/2.6.11/vue.runtime<%= process.env.NODE_ENV === 'production' ? '.min.js' : '.js' %>" crossorigin="anonymous"></script> -->
+  <!-- vue-router -->
+  <!-- <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router<%= process.env.NODE_ENV === 'production' ? '.min.js' : '.js' %>" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.bootcss.com/element-ui/2.13.0/index.js" crossorigin="anonymous"></script> -->
+  <noscript>
+    <strong>We're sorry but pixivic-refactor doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+<script>
+  window.onload = function () {
+    document.body.addEventListener('touchstart', function (event) {
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
+    }, {
+      passive: false  // 关闭被动监听
+    });
+    var lastTouchEnd = 0;
+    document.body.addEventListener('touchend', function (event) {
+      var now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+};
+</script>
+<script>
+if ((location.href || '').indexOf('vconsole=true') > -1) {
+    document.write('<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"><\/script>');
+    document.write('<script>new VConsole()<\/script>');
+}
+</script>
+<script src="//at.alicdn.com/t/font_1625300_4em8l0cbaqk.js"></script>
+<script data-ad-client="ca-pub-7308895271330819" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158701012-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158701012-2');
+</script>
+</html>
