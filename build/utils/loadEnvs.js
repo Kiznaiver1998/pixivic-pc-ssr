@@ -36,4 +36,8 @@ const stringifiedEnvs = envKeys.reduce((res, name) => {
   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
 })
 
+if (process.env.NODE_ENV !== 'production') {
+  logger.debug('Using env', stringifiedEnvs)
+}
+
 module.exports = stringifiedEnvs

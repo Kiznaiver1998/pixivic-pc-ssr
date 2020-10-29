@@ -18,9 +18,6 @@ class Logger {
   }
 
   debug(...args) {
-    if (!this.options.debug) {
-      return
-    }
     this.log(chalk.magenta('debug'), ...args)
   }
 
