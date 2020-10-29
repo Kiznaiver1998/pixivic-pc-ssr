@@ -5,14 +5,14 @@ import { createRouter } from './router'
 import { sync } from 'vuex-router-sync'
 import titleMixin from './util/title'
 import * as filters from './util/filters'
-// import VuePageStack from 'vue-page-stack';
-// import 'element-ui/lib/theme-chalk/index.css';
-// import i18n from './i18n'
-// import ElementUI from 'element-ui'
+// import VuePageStack from 'vue-page-stack'
+import 'element-ui/lib/theme-chalk/index.css'
+import i18n from './i18n'
+import ElementUI from 'element-ui'
 
 Vue.mixin(titleMixin)
 // Vue.use(VuePageStack, { router, keyName: 'VNK' });
-// Vue.use(ElementUI);
+Vue.use(ElementUI);
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {
@@ -36,7 +36,7 @@ export function createApp () {
   const app = new Vue({
     router,
     store,
-    // i18n,
+    i18n,
     render: h => h(App)
   })
 

@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-    app
+    <el-button>{{ $t('followed') }}</el-button>
   </div>
 </template>
 

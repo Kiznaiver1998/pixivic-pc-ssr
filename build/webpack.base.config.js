@@ -51,6 +51,27 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
+      {
+        test: /\.css$/,
+        use: [
+          isProd ? {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          } : 'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false,
+            }
+          },
+        ],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'file-loader'
+      },
     ]
   },
   performance: {
