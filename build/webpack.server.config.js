@@ -20,7 +20,7 @@ module.exports = merge(base, {
   module: {
     rules: [
       {
-        test: /\.styl(us)?$/,
+        test: /\.less$/,
         use: 'null-loader'
       }
     ]

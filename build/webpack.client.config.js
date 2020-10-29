@@ -20,7 +20,7 @@ const config = merge(base, {
   module: {
     rules: [
       {
-        test: /\.styl(us)?$/,
+        test: /\.less$/,
         use: [
           isProd ? {
             loader: MiniCssExtractPlugin.loader,
@@ -34,7 +34,7 @@ const config = merge(base, {
               esModule: false,
             }
           },
-          'stylus-loader'
+          'less-loader'
         ],
       },
     ],

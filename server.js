@@ -55,6 +55,7 @@ if (isProd) {
     templatePath,
     (bundle, options) => {
       renderer = createRenderer(bundle, options)
+      console.log('rendererrrrrrrrrrrrrrrrrrrrrrrr');
     }
   )
 }
@@ -106,7 +107,7 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'Vue HN 2.0', // default title
+    title: 'pixivic ssr test', // default title
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {

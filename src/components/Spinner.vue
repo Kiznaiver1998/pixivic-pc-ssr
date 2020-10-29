@@ -16,7 +16,8 @@
         cx="22"
         cy="22"
         r="20"
-      />
+      ></circle>
+    </svg>
   </transition>
 </template>
 
