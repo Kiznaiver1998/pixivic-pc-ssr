@@ -88,6 +88,6 @@ module.exports = {
       ]
     : [
         new VueLoaderPlugin(),
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin(),
       ]
 }

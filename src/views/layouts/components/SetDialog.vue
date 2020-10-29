@@ -77,7 +77,7 @@
 
 <script>
 import { VueCropper } from 'vue-cropper';
-import { QQ_LINK } from '@/util/constants';
+import { QQ_LINK } from '@/utils/constants';
 export default {
   name: 'Index',
   components: { VueCropper },

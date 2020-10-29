@@ -2,6 +2,7 @@
 <template>
   <div id="app">
     <el-button>{{ $t('followed') }}</el-button>
+    <el-button type="primary" icon="el-icon-share">{{ baseURL }}</el-button>
   </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
   },
   data() {
     return {
-
+      baseURL: process.env.VUE_APP_BASE_API,
     };
   },
   computed: {

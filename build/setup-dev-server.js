@@ -51,6 +51,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     publicPath: clientConfig.output.publicPath,
     noInfo: true
   })
+
   app.use(devMiddleware)
   clientCompiler.hooks.done.tap('done', stats => {
     stats = stats.toJson()

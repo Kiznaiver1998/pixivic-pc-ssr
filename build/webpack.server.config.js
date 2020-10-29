@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge')
 const base = require('./webpack.base.config')
 // const nodeExternals = require('webpack-node-externals')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
+const envs = require('./utils/loadEnvs')
 
 module.exports = merge(base, {
   target: 'node',
@@ -34,7 +35,7 @@ module.exports = merge(base, {
   externals: Object.keys(require('../package.json').dependencies),
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      ...envs,
       'process.env.VUE_ENV': '"server"'
     }),
     new VueSSRServerPlugin()
