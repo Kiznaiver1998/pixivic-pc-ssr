@@ -39,22 +39,24 @@
             />
           </el-select>
         </el-autocomplete>
-        <el-popover
-          placement="bottom"
-          style="margin-left:10px"
-          trigger="hover"
-        >
-          <i
-            slot="reference"
-            class="el-icon-s-flag"
-            style="color:#409EFF"
-          />
-          <ImgTags
-            v-if="hotTags.length"
-            :tagslist="hotTags"
-            @on-click="handleClickTag"
-          />
-        </el-popover>
+          <client-only>
+            <el-popover
+              placement="bottom"
+              style="margin-left:10px"
+              trigger="hover"
+            >
+              <i
+                slot="reference"
+                class="el-icon-s-flag"
+                style="color:#409EFF"
+              />
+              <ImgTags
+                v-if="hotTags.length"
+                :tagslist="hotTags"
+                @on-click="handleClickTag"
+              />
+            </el-popover>
+          </client-only>
       </el-col>
       <el-select
         :value="$i18n.locale"

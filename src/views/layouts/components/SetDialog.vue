@@ -42,15 +42,17 @@
           </p>
         </div>
 
-        <div class="change-avatar">
-          <vueCropper
-            ref="cropper"
-            :auto-crop="option.autoCrop"
-            :fixed="option.fixed"
-            :img="option.img"
-            :output-size="option.size"
-            class="cropper"
-          />
+        <div class="change-avatar">​​
+          <client-only>
+            <vue-cropper
+              ref="cropper"
+              :auto-crop="option.autoCrop"
+              :fixed="option.fixed"
+              :img="option.img"
+              :output-size="option.size"
+              class="cropper"
+            />
+          </client-only>
           <div class="upload">
             <el-button class="btn">
               上传图片
@@ -76,11 +78,9 @@
 </template>
 
 <script>
-import { VueCropper } from 'vue-cropper';
 import { QQ_LINK } from '@/utils/constants';
 export default {
   name: 'Index',
-  components: { VueCropper },
   props: {
     settingVisible: {
       type: Boolean,
@@ -159,7 +159,7 @@ export default {
       const reader = new FileReader();
       reader.onload = e => {
         let data;
-        if (typeof e.target.result === 'object') {
+        if (typeof e.target.result === 'object' && window) {
           data = window.URL.createObjectURL(new Blob([e.target.result]));
         } else {
           data = e.target.result;
@@ -190,7 +190,7 @@ export default {
       });
     },
     bindQQ() {
-      window.open(QQ_LINK);
+      window.open(QQ_LINK)
     },
     // 解绑qq
     unLinkQQ() {

@@ -6,14 +6,12 @@ import { createRouter } from './router'
 import { sync } from 'vuex-router-sync'
 import titleMixin from './utils/title'
 import * as filters from './utils/filters'
-// import VuePageStack from 'vue-page-stack'
 import 'element-ui/lib/theme-chalk/index.css'
 import i18n from './i18n'
 import ElementUI from 'element-ui'
 import ClientOnly from 'vue-client-only'
 
 Vue.mixin(titleMixin)
-// Vue.use(VuePageStack, { router, keyName: 'VNK' });
 Vue.use(ElementUI);
 Vue.prototype.$api = api;
 Vue.component('client-only', ClientOnly);

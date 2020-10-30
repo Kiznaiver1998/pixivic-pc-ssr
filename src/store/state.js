@@ -1,6 +1,6 @@
 
 const state = {
-  // user: JSON.parse(localStorage.getItem('user')) || {},
+  user: {},
   cachedViews: [],
   showTab: false,
   likeStatus: null, // 点赞画作状态
@@ -12,5 +12,9 @@ const state = {
   readyCollectItem: {},
   collectInfo: {}
 };
+
+if (process.env.VUE_ENV === 'client') {
+  state.user = JSON.parse(localStorage.getItem('user')) || {};
+}
 
 export default state;

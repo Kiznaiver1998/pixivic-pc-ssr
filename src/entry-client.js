@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import 'es6-promise/auto'
+import VueCropper from 'vue-cropper'
 import { createApp } from './app'
 import ProgressBar from './components/ProgressBar.vue'
 
@@ -23,6 +24,8 @@ Vue.mixin({
 })
 
 const { app, router, store } = createApp()
+
+Vue.use(VueCropper)
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.
