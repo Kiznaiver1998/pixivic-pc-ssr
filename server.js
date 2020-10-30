@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const favicon = require('serve-favicon')
 const compression = require('compression')
 const microcache = require('route-cache')
@@ -64,6 +65,7 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 1000 * 60 * 60 * 24 * 30 : 0
 })
 
+app.use(cookieParser())
 app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/logo-48.png'))
 app.use('/dist', serve('./dist', true))
@@ -107,9 +109,11 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'pixivic ssr test', // default title
-    url: req.url
+    title: 'Pixiv Illustration Collection', // default title
+    url: req.url,
+    cookies: req.cookies,
   }
+
   renderer.renderToString(context, (err, html) => {
     if (err) {
       return handleError(err)

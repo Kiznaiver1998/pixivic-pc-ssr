@@ -1,4 +1,5 @@
 import { createApp } from './app'
+import axios from './api/base';
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -29,6 +30,12 @@ export default context => {
       if (!matchedComponents.length) {
         return reject({ code: 404 })
       }
+
+      // set jwt
+      if (context.cookies && context.cookies.jwt) {
+        axios.defaults.headers.common['Authorization'] = context.cookies.jwt;
+      }
+
       // Call fetchData hooks on components matched by the route.
       // A preFetch hook dispatches a store action and returns a Promise,
       // which is resolved when the action is complete and store state has been
