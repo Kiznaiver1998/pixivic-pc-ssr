@@ -1,8 +1,7 @@
 
 <template>
   <div id="app">
-    <el-button>{{ $t('followed') }}</el-button>
-    <el-button type="primary" icon="el-icon-share">{{ baseURL }}</el-button>
+    <router-view />
   </div>
 </template>
 

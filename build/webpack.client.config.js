@@ -38,6 +38,24 @@ const config = merge(base, {
           'less-loader'
         ],
       },
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          isProd ? {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          } : 'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false,
+            }
+          },
+          'stylus-loader'
+        ],
+      },
     ],
   },
   optimization: {

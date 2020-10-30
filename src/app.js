@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import api from './api';
 import App from './App.vue'
 import { createStore } from './store'
 import { createRouter } from './router'
@@ -9,10 +10,13 @@ import * as filters from './utils/filters'
 import 'element-ui/lib/theme-chalk/index.css'
 import i18n from './i18n'
 import ElementUI from 'element-ui'
+import ClientOnly from 'vue-client-only'
 
 Vue.mixin(titleMixin)
 // Vue.use(VuePageStack, { router, keyName: 'VNK' });
 Vue.use(ElementUI);
+Vue.prototype.$api = api;
+Vue.component('client-only', ClientOnly);
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {
