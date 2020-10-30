@@ -20,7 +20,7 @@
         <!-- 主要页面结束 -->
       </el-container>
     </el-container>
-    <!-- <CollectPicture /> -->
+    <CollectPicture />
   </div>
 </template>
 
@@ -28,14 +28,14 @@
 import HeaderBar from './views/layouts/HeaderBar.vue';
 import LeftSide from './views/layouts/LeftSide.vue';
 import cookie from 'js-cookie';
-// import CollectPicture from './components/Collections/CollectPicture';
+import CollectPicture from './components/collections/CollectPicture.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderBar,
     LeftSide,
-    // CollectPicture
+    CollectPicture
   },
   data() {
     return {
